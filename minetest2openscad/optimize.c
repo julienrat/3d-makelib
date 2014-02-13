@@ -51,8 +51,8 @@ int main(int argc,char **argv)
 	for (x=0 ; x < XSIZE ; x++){
 		for (y=0 ; y < YSIZE ; y++){
 			for (z=0 ; z < ZSIZE ; z++){
-				if (xyz[x][y][z] > 0){
-					printf("translate([%d,%d,%d]) cube([1,1,%d]);\n",x,y,z,xyz[x][y][z]);
+				if (xyz[x][y][z] > 0){ //agrandissement des cubes pour chevauchement afin d'eviter l'erreur openscad "Object isn't a valid 2-manifold! Modify your design."
+					printf("translate([%d,%d,%d]) cube([1.001,1.001,%d]);\n",x,y,z,xyz[x][y][z]);
 				}
 			}
 		}
